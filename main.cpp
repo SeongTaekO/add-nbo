@@ -27,8 +27,12 @@ uint32_t read_byte(const char *path) {
             printf("host byte order: %x\n", data);
         }
         else {    // fread로 데이터를 얻지 못함
-            printf("can't read data");
+            printf("cant read file\n");
         }
+        fclose(file);
+    }
+    else {
+        printf("cant open file\n");
         fclose(file);
     }
     
